@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql
+    container_name: fsw-barber-db
+    environment:
+      MYSQL_DATABASE: fsw-barber-db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./db:/var/lib/mysql
