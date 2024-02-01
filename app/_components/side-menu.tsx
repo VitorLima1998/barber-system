@@ -14,7 +14,7 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 
 const SideMenu = () => {
   const { data } = useSession();
-  const handleLoginClick = () => signIn();
+  const handleLoginClick = () => signIn('google');
   const handleLogoutClick = () => signOut();
 
   return (
