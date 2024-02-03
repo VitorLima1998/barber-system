@@ -1,3 +1,4 @@
+// 'use client';
 import { getServerSession } from 'next-auth';
 import { db } from '../../_lib/prisma';
 import BarbershopInfo from './_components/barbershop-info';
@@ -39,6 +40,7 @@ const BarbershopDetailsPage = async ({
       <BarbershopInfo barbershop={barbershop} />
       {barbershop.services.map((service: any) => (
         <ServiceItem
+          barbershop={barbershop}
           key={service.id}
           service={service}
           isAuthenticated={!!session?.user}
