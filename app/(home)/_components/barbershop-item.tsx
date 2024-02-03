@@ -52,7 +52,7 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
             variant='secondary'
             onClick={handleBookingClick}
           >
-            Reserve
+            Reservar
           </Button>
         </div>
       </CardContent>
