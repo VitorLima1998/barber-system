@@ -179,7 +179,7 @@ const ServiceItem = ({
                       selected={date}
                       onSelect={handleDateClick}
                       locale={ptBR}
-                      fromDate={addDays(new Date(), 1)}
+                      fromDate={addDays(new Date(), 0)}
                       styles={{
                         head_cell: {
                           width: '100%',
