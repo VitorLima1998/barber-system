@@ -228,7 +228,6 @@ const ServiceItem = ({
                         <div className='flex justify-between'>
                           <h2 className='font-bold'>{service.name}</h2>
                           <h3 className='font-bold text-sm'>
-                            {' '}
                             {Intl.NumberFormat('pt-BR', {
                               style: 'currency',
                               currency: 'BRL',
