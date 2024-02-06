@@ -5,7 +5,6 @@ import { db } from '../_lib/prisma';
 import BookingItem from '../_components/booking-item';
 import { authOptions } from '../_lib/auth';
 
-
 const BookingsPage = async () => {
   const session = await getServerSession(authOptions);
 
