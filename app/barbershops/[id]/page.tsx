@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth';
 import { db } from '../../_lib/prisma';
 import BarbershopInfo from './_components/barbershop-info';
 import ServiceItem from './_components/service-item';
-import { authOptions } from '../../api/auth/[...nextauth]/route';
+import { authOptions } from '../../_lib/auth';
 
 interface BarbershopDetailsPageProps {
   params: {
