@@ -4,16 +4,17 @@ import Header from '../_components/header';
 import { db } from '../_lib/prisma';
 import Search from '../(home)/_components/search';
 
-interface BarbershopPageProps {
+interface BarbershopsPageProps {
   searchParams: {
     search?: string;
   };
 }
 
-const BarbershopsPage = async ({ searchParams }: BarbershopPageProps) => {
+const BarbershopsPage = async ({ searchParams }: BarbershopsPageProps) => {
   if (!searchParams.search) {
     return redirect('/');
   }
+
   const barbershops = await db.barbershop.findMany({
     where: {
       name: {
@@ -22,6 +23,7 @@ const BarbershopsPage = async ({ searchParams }: BarbershopPageProps) => {
       },
     },
   });
+
   return (
     <>
       <Header />
@@ -32,9 +34,11 @@ const BarbershopsPage = async ({ searchParams }: BarbershopPageProps) => {
             search: searchParams.search,
           }}
         />
-        <h1 className=' text-gray-400 font-bold text-xs uppercase'>
-          Resultados para '{searchParams.search}'
+
+        <h1 className='text-gray-400 font-bold text-xs uppercase'>
+          Resultados para &quot;{searchParams.search}&quot;
         </h1>
+
         <div className='grid grid-cols-2 gap-4'>
           {barbershops.map((barbershop: any) => (
             <div key={barbershop.id} className='w-full'>
